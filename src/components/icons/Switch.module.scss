@@ -1,0 +1,54 @@
+
+@use "@/app/variables.scss" as *;
+
+.switchIcon {
+  border: 1.5px solid $neutral;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.4rem;
+  cursor: pointer;
+  background: transparent;
+
+  .sun,
+  .moon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.4rem;
+    height: 3rem;
+    z-index: 2;
+    position: relative;
+
+    img {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+
+  .ball {
+    background: $white;
+    width: 3.4rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: left 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .active {
+    left: calc(100% - 3.4rem);
+  }
+}
+
+
+.light .switchIcon {
+  .ball {
+    background: $black;
+  }
+}

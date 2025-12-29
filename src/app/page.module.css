@@ -1,0 +1,6 @@
+/* Main page wrapper - minimal styling to not interfere with portfolio sections */
+.main {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}

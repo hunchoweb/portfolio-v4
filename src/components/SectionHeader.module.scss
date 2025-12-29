@@ -1,0 +1,67 @@
+
+@use "@/app/variables.scss" as *;
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .content {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+
+  &.vertical {
+    rotate: 90deg;
+    position: absolute;
+    left: 0;
+    top: 46%;
+    width: 100vh;
+    transform-origin: left;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    h1 {
+      font-size: 10rem;
+      margin: 0 2rem;
+      text-transform: uppercase;
+      font-weight: normal;
+      color: transparent;
+      -webkit-text-stroke: 1px $neutral;
+
+      span {
+        color: $white;
+        -webkit-text-stroke: 0;
+      }
+    }
+  }
+
+  .arrow {
+    width: 10rem;
+    height: 10rem;
+    flex-shrink: 0;
+  }
+}
+
+// Light mode adjustments
+.light .sectionHeader {
+  div h1 {
+    span {
+      color: $black;
+    }
+  }
+}

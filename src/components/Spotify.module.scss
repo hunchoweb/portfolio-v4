@@ -1,0 +1,59 @@
+
+@use "@/app/variables.scss" as *;
+
+.spotify-container {
+  padding: 0.5rem 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  position: fixed;
+  top: 87%;
+  left: -15rem;
+  background: black;
+  transition: all 0.5s ease;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0.5;
+  z-index: 3;
+  border-radius: 0 4px 4px 0;
+
+  &.offline {
+    left: -10rem;
+    width: 14rem;
+    padding: 0.5rem;
+    @media (max-width: $small) {
+      left: -9rem;
+    }
+  }
+  &:hover {
+    left: 0;
+    opacity: 1;
+  }
+  p {
+    color: rgba(189, 189, 189, 0.87);
+    font-size: 1.3rem;
+  }
+
+  .playing-text {
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    span {
+      color: #1ccc5b;
+      display: block;
+      font-weight: 600;
+        
+      &:nth-child(3) {
+        color: $neutral2;
+      }
+    }
+    p {
+      color: $white;
+      font-size: 1.3rem;
+    }
+  }
+}
