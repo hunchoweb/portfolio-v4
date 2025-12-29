@@ -563,8 +563,13 @@ header {
 .about-section {
   border-bottom: 1px solid $neutral2;
 
-  .section-header .content {
-    animation: marqueeRight 5s linear infinite;
+  .section-header {
+    border-top: 1px solid $neutral2;
+    border-bottom: 1px solid $neutral2;
+    
+    .content {
+      animation: marqueeRight 5s linear infinite;
+    }
   }
 
   .image {
@@ -823,14 +828,14 @@ header {
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
-        padding: 3rem 0;
+        padding: 3rem 5%;
 
         .title-container {
           .dot {
-            opacity: 1; // Always show dot on mobile
+            opacity: 1;
           }
           h3 {
-            color: $white; // Always white on mobile
+            color: $white;
           }
         }
 
