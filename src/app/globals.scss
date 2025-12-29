@@ -50,7 +50,6 @@ h2,
 h3,
 a,
 span {
-  // color: $white;
   &::selection {
     background: green;
   }
@@ -382,9 +381,6 @@ header {
     }
   }
 
-  // padding: 20rem 0; //15 rem before
-  border-bottom: 1px solid $neutral2;
-
   @media (max-width: $medium) {
     height: auto;
     padding: 10rem 0rem;
@@ -565,80 +561,118 @@ header {
 
 // About Section
 .about-section {
-  position: relative;
-  padding: 5rem 0;
   border-bottom: 1px solid $neutral2;
 
-  .section-header {
-    border-top: 1px solid $neutral2;
-    border-bottom: 1px solid $neutral2;
-  }
-
-  .container {
-    display: flex;
-    gap: 5rem;
-    padding: 5rem 0;
-
-    @media (max-width: $medium) {
-      flex-direction: column;
-    }
+  .section-header .content {
+    animation: marqueeRight 5s linear infinite;
   }
 
   .image {
     position: relative;
-    flex: 1;
-    max-width: 50rem;
-
     .disclaimer {
       position: absolute;
-      top: 2rem;
-      left: 2rem;
+      display: inline;
       font-size: 1.2rem;
-      color: $neutral;
+      font-style: italic;
       z-index: 2;
-    }
-
-    .image-border {
-      position: absolute;
       top: 2rem;
-      left: 2rem;
-      width: 100%;
-      height: 100%;
-      border: 1px solid $neutral2;
+      left: -5rem;
+      color: $neutral2;
+      line-height: 1.68rem;
+
+      @media (max-width: $xSmall) {
+        left: -1rem;
+      }
     }
+  }
+  .image-border {
+    border: 1px solid $neutral2;
+    width: 60.4rem;
+    height: 34rem;
+    position: absolute;
+    transition: all 0.3s ease;
+    z-index: -1;
 
-    img {
+    @media (max-width: $small) {
+      margin-left: 0rem;
+      margin-top: 0rem;
       width: 100%;
-      height: auto;
-      object-fit: cover;
-      max-width: 100%;
+      height: 90%;
+    }
+  }
 
-      &.dark {
-        display: block;
-      }
+  img {
+    transition: all 0.3s ease;
+    width: 62rem;
 
-      &.light {
-        display: none;
-      }
+    &.light {
+      display: none;
+    }
+    &.dark {
+      display: block;
+    }
+    @media (max-width: $small) {
+      margin-left: 0rem;
+      margin-top: 0rem;
+      width: 90vw;
     }
   }
 
   .text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 75rem;
+    margin-left: 30rem;
+    margin-top: -5rem;
+    z-index: 2;
 
-    p {
-      margin-bottom: 3rem;
+    @media (max-width: $small) {
+      margin-left: 0rem;
+      margin-top: 5rem;
+      width: 100%;
     }
 
-    .btn_about {
-      width: fit-content;
+    @media (max-width: $xSmall) {
+      width: 100%;
+    }
+
+    P {
+      display: inline-block;
+      line-height: 3rem;
+      // text-transform: uppercase;
+
+      b {
+        font-style: italic;
+        text-transform: uppercase;
+      }
+    }
+
+    .btn {
+      margin: 2rem 0;
+      padding: 1rem 7rem;
 
       &::after {
         content: "GET IN TOUCH";
       }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15rem 0;
+    @media (max-width: $small) {
+      padding: 10rem 0;
+    }
+  }
+  .container:hover {
+    .image-border {
+      transform: translate(-1.5%, -2.5%);
+    }
+
+    img {
+      transform: translate(1.5%, 2.5%);
     }
   }
 }

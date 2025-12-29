@@ -42,7 +42,6 @@ const About = () => {
             src="/images/person3.png"
             width={620}
             height={400}
-            style={{ width: "100%", height: "auto" }}
           />
           <Image
             className="dark"
@@ -50,7 +49,6 @@ const About = () => {
             src="/images/person.png"
             width={620}
             height={400}
-            style={{ width: "100%", height: "auto" }}
           />
         </div>
 
