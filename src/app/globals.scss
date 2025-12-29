@@ -720,117 +720,186 @@ header {
   }
 
   .projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
     gap: 0;
-    max-width: 90%;
-    margin: auto;
-    padding: 5rem 0;
-
-    @media (min-width: $xLarge) {
-      max-width: $xLarge;
-    }
-
-    @media (max-width: $medium) {
-      grid-template-columns: 1fr;
-    }
 
     .project {
       position: relative;
-      overflow: hidden;
       cursor: pointer;
-      border: 1px solid $neutral2;
-      transition: all 0.3s ease;
+      border-top: 1px solid $neutral2;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: flex-start;
+      padding: 4rem 5%; // Full width border with content padding
 
-      &:hover {
-        .image img {
-          transform: scale(1.05);
-        }
-
-        .cursor {
-          opacity: 1;
-          transform: translate(-50%, -50%) scale(1);
-        }
+      @media (min-width: $xLarge) {
+        padding: 4rem calc((100% - #{$xLarge}) / 2);
       }
 
-      .container {
-        padding: 2rem 3rem;
+      // First project - no top border (header bottom border serves as its top)
+      &.first {
+        border-top: none;
+      }
+
+      &:last-child {
+        border-bottom: none; // Section border-bottom serves as last project's bottom
+      }
+
+      // Left side content (title + skills below)
+      .left-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex-shrink: 0;
+      }
+
+      // Title container with dot
+      .title-container {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        border-bottom: 1px solid $neutral2;
-
-        &:first-child {
-          justify-content: flex-start;
-        }
+        gap: 1.5rem;
 
         .dot {
           width: 1rem;
           height: 1rem;
           border-radius: 50%;
-          background-color: #00ff00;
+          background-color: $white;
+          opacity: 0; // Hidden by default
+          transition: opacity 0.3s ease;
         }
 
         h3 {
-          color: $white;
-          font-size: 2.5rem;
-          line-height: normal;
+          color: $neutral; // Grayed out by default
+          font-size: 5rem;
+          font-weight: 400;
+          line-height: 1;
+          transition: color 0.3s ease;
+          
+          @media (max-width: $medium) {
+             font-size: 3rem;
+          }
         }
+      }
 
+      // Skills container - hidden by default on desktop
+      .skills-container {
         .skills {
           display: flex;
           flex-wrap: wrap;
           gap: 1rem;
 
           span {
-            padding: 0.5rem 1.5rem;
+            padding: 0.8rem 2rem;
             border: 1px solid $neutral2;
             border-radius: 100px;
             font-size: 1.2rem;
-            font-weight: normal;
+            font-weight: 500;
             color: $white;
+            text-transform: uppercase;
             transition: all 0.3s ease;
-
-            &:hover {
-              border-color: $white;
-            }
           }
         }
       }
 
+      // Image container
       .image {
-        position: relative;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 1rem;
         overflow: hidden;
 
         img {
-          width: 100%;
-          height: auto;
           display: block;
-          transition: transform 0.5s ease;
+          object-fit: cover;
+        }
+      }
+
+      // Mobile State
+      @media (max-width: $medium) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 3rem 0;
+
+        .title-container {
+          .dot {
+            opacity: 1; // Always show dot on mobile
+          }
+          h3 {
+            color: $white; // Always white on mobile
+          }
         }
 
-        .cursor {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) scale(0.8);
-          background-color: $white;
-          color: $black;
-          padding: 2rem 3rem;
-          border-radius: 100px;
-          opacity: 0;
-          transition: all 0.3s ease;
-          pointer-events: none;
+        .skills-container {
+          display: block;
+          opacity: 1;
+        }
 
-          p {
-            color: $black;
-            font-weight: 600;
-            white-space: nowrap;
+        .image {
+          position: relative;
+          top: auto;
+          transform: none;
+          width: 100%;
+          height: auto;
+          opacity: 1;
+           
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+
+      // Desktop State
+      @media (min-width: $medium) {
+        .skills-container {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: all 0.4s ease;
+        }
+
+        .image {
+          width: 0;
+          height: 22rem;
+          opacity: 0;
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+          img {
+            width: 38rem;
+            height: 100%;
+          }
+        }
+
+        // Hover state
+        &:hover {
+          .title-container {
+            .dot {
+              opacity: 1; // Show dot on hover
+            }
+            h3 {
+              color: $white; // White text on hover
+            }
+          }
+
+          .skills-container {
+            max-height: 10rem;
+            opacity: 1;
+          }
+
+          .image {
+            width: 38rem;
+            opacity: 1;
           }
         }
       }
     }
-    }
+  }
+
 }
 
 .light .work-section {
@@ -842,21 +911,44 @@ header {
   }
   
   .projects .project {
-     border: 1px solid $black;
+     border-top: 1px solid $neutral;
+     border-left: none;
+     border-right: none;
+     border-bottom: none;
+
+     &.first {
+       border-top: none; // First project no top border
+     }
+
+     &:last-child {
+       border-bottom: none; // Section border-bottom serves as last project's bottom
+     }
      
-     .container {
-        border-bottom: 1px solid $black;
-        
+     .title-container {
         h3 {
-          color: $black;
+          color: $neutral; // Grayed out in light mode
         }
-        
-        .skills span {
-           border: 1px solid $black;
-           color: $black;
-           &:hover {
-              border-color: $black;
+
+        .dot {
+          background-color: $black;
+        }
+     }
+
+     // Hover state for light mode
+     @media (min-width: $medium) {
+       &:hover {
+         .title-container {
+           h3 {
+             color: $black; // Black text on hover in light mode
            }
+         }
+       }
+     }
+     
+     .skills-container {
+        .skills span {
+           border: 1px solid $neutral;
+           color: $black;
         }
      }
   }

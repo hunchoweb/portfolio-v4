@@ -39,246 +39,251 @@ const Work = () => {
     <section className="work-section" id="work">
       <SectionHeader text="WORK" />
       <div className="projects">
-        {/* Project 1: Translator Chat */}
+        {/* Project 1: Chat Translator */}
         <div
-          onClick={() => openTab("https://translator-chat-app.vercel.app")}
-          className="project"
+          onClick={() => openTab("https://chat-translate-app.vercel.app/")}
+          className="project first"
         >
-          <div className="container">
-            <div className="dot"></div>
-            <h3>Translator Chat</h3>
-          </div>
-          <div className="container">
-            <div className="skills">
-              <span style={{ "--i": 0 } as any}>NEXT JS</span>
-              <span style={{ "--i": 1 } as any}>TAILWIND CSS</span>
-              <span style={{ "--i": 3 } as any}>GSAP</span>
-              <span style={{ "--i": 3 } as any}>TYPESCRIPT</span>
+          <div className="left-content">
+            <div className="title-container">
+              <div className="dot"></div>
+              <h3>Chat Translator</h3>
+            </div>
+            <div className="skills-container">
+              <div className="skills">
+                <span>NEXT JS</span>
+                <span>TAILWIND CSS</span>
+                <span>TYPESCRIPT</span>
+                <span>FIREBASE</span>
+              </div>
             </div>
           </div>
-          <div style={{ backgroundColor: "#111119" }} className="image">
-            <a
-              target="_blank"
-              href="https://translator-chat-app.vercel.app"
-              rel="noreferrer"
-            >
-              <Image
-                alt="translatorChat"
-                src="/images/translatorChat.png"
-                width={500}
-                height={300}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </a>
+          <div className="image">
+            <Image
+              alt="Chat Translator"
+              src="/images/translatorChat.png"
+              width={500}
+              height={300}
+            />
           </div>
         </div>
 
-        {/* Project 2: Raft */}
+        {/* Project 2: MOQO */}
         <div
-          onClick={() => openTab("https://raceiorr.vercel.app")}
+          onClick={() => openTab("https://moqo-clone.vercel.app/")}
           className="project"
         >
-          <div className="container">
-            <div className="dot"></div>
-            <h3>Raft</h3>
-          </div>
-          <div className="container">
-            <div className="skills">
-              <span style={{ "--i": 0 } as any}>NEXT JS</span>
-              <span style={{ "--i": 1 } as any}>TAILWIND CSS</span>
-              <span style={{ "--i": 3 } as any}>GSAP</span>
-              <span style={{ "--i": 3 } as any}>TYPESCRIPT</span>
-              <span style={{ "--i": 3 } as any}>FRAMER</span>
+          <div className="left-content">
+            <div className="title-container">
+              <div className="dot"></div>
+              <h3>MOQO</h3>
+            </div>
+            <div className="skills-container">
+              <div className="skills">
+                <span>NEXT JS</span>
+                <span>TAILWIND CSS</span>
+                <span>TYPESCRIPT</span>
+                <span>GSAP</span>
+              </div>
             </div>
           </div>
-          <div style={{ backgroundColor: "#111119" }} className="image">
-            <a target="_blank" href="raceiorr.vercel.app" rel="noreferrer">
-              <Image
-                alt="Raft"
-                src="/images/Raft.png"
-                width={500}
-                height={300}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </a>
+          <div className="image">
+            <Image alt="MOQO" src="/images/Moqo.png" width={500} height={300} />
           </div>
         </div>
 
-        {/* Project 3: Linear */}
+        {/* Project 3: OBYS */}
+        <div
+          onClick={() => openTab("https://obys-eta.vercel.app/")}
+          className="project"
+        >
+          <div className="left-content">
+            <div className="title-container">
+              <div className="dot"></div>
+              <h3>OBYS</h3>
+            </div>
+            <div className="skills-container">
+              <div className="skills">
+                <span>REACT</span>
+                <span>TAILWIND CSS</span>
+                <span>THREE JS</span>
+                <span>GSAP</span>
+                <span>FRAMER</span>
+                <span>SHERY JS</span>
+              </div>
+            </div>
+          </div>
+          <div className="image">
+            <Image alt="OBYS" src="/images/Obys.png" width={500} height={300} />
+          </div>
+        </div>
+
+        {/* Project 4: RAFT */}
+        <div
+          onClick={() => openTab("https://raceiorr.vercel.app/")}
+          className="project"
+        >
+          <div className="left-content">
+            <div className="title-container">
+              <div className="dot"></div>
+              <h3>RAFT</h3>
+            </div>
+            <div className="skills-container">
+              <div className="skills">
+                <span>NEXT JS</span>
+                <span>TAILWIND CSS</span>
+                <span>GSAP</span>
+                <span>TYPESCRIPT</span>
+                <span>FRAMER</span>
+              </div>
+            </div>
+          </div>
+          <div className="image">
+            <Image alt="RAFT" src="/images/Raft.png" width={500} height={300} />
+          </div>
+        </div>
+
+        {/* Project 5: Linear */}
         <div
           onClick={() => openTab("https://linear-clone-omega.vercel.app")}
           className="project"
         >
-          <div className="container">
-            <div className="dot"></div>
-            <h3>Linear</h3>
-          </div>
-          <div className="container">
-            <div className="skills">
-              <span style={{ "--i": 0 } as any}>HTML</span>
-              <span style={{ "--i": 1 } as any}>CSS</span>
-              <span style={{ "--i": 2 } as any}>TYPESCRIPT</span>
+          <div className="left-content">
+            <div className="title-container">
+              <div className="dot"></div>
+              <h3>Linear</h3>
+            </div>
+            <div className="skills-container">
+              <div className="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>TYPESCRIPT</span>
+              </div>
             </div>
           </div>
-          <div style={{ backgroundColor: "#111119" }} className="image">
-            <a
-              target="_blank"
-              href="https://linear-clone-omega.vercel.app"
-              rel="noreferrer"
-            >
-              <Image
-                alt="Linear"
-                src="/images/linear.png"
-                width={500}
-                height={300}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </a>
-            <div className="cursor">
-              <p>View Site</p>
-            </div>
+          <div className="image">
+            <Image
+              alt="Linear"
+              src="/images/linear.png"
+              width={500}
+              height={300}
+            />
           </div>
         </div>
 
-        {/* Project 4: Lightship */}
+        {/* Project 6: Lightship */}
         <div
           onClick={() => openTab("https://lightship-snowy.vercel.app/")}
           className="project"
         >
-          <div className="container">
-            <div className="dot"></div>
-            <h3>Lightship</h3>
-          </div>
-          <div className="container">
-            <div className="skills">
-              <span style={{ "--i": 0 } as any}>HTML</span>
-              <span style={{ "--i": 1 } as any}>CSS</span>
-              <span style={{ "--i": 2 } as any}>JAVASCRIPT</span>
-              <span style={{ "--i": 2 } as any}>GSAP</span>
+          <div className="left-content">
+            <div className="title-container">
+              <div className="dot"></div>
+              <h3>Lightship</h3>
+            </div>
+            <div className="skills-container">
+              <div className="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JAVASCRIPT</span>
+                <span>GSAP</span>
+              </div>
             </div>
           </div>
-          <div style={{ backgroundColor: "#111119" }} className="image">
-            <a
-              target="_blank"
-              href="https://lightship-snowy.vercel.app/"
-              rel="noreferrer"
-            >
-              <Image
-                alt="Lightship"
-                src="/images/Lightship.png"
-                width={500}
-                height={300}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </a>
-            <div className="cursor">
-              <p>View Site</p>
-            </div>
+          <div className="image">
+            <Image
+              alt="Lightship"
+              src="/images/Lightship.png"
+              width={500}
+              height={300}
+            />
           </div>
         </div>
 
-        {/* Project 5: Magma DeFi */}
+        {/* Project 7: Magma DeFi */}
         <div
           onClick={() => openTab("https://magma-nine.vercel.app")}
           className="project"
         >
-          <div className="container">
-            <div className="dot"></div>
-            <h3>Magma DeFi</h3>
-          </div>
-          <div className="container">
-            <div className="skills">
-              <span style={{ "--i": 0 } as any}>HTML</span>
-              <span style={{ "--i": 1 } as any}>CSS</span>
-              <span style={{ "--i": 2 } as any}>JAVASCRIPT</span>
-              <span style={{ "--i": 2 } as any}>GSAP</span>
+          <div className="left-content">
+            <div className="title-container">
+              <div className="dot"></div>
+              <h3>Magma DeFi</h3>
+            </div>
+            <div className="skills-container">
+              <div className="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JAVASCRIPT</span>
+                <span>GSAP</span>
+              </div>
             </div>
           </div>
-          <div style={{ backgroundColor: "#111119" }} className="image">
-            <a
-              target="_blank"
-              href="https://magma-nine.vercel.app"
-              rel="noreferrer"
-            >
-              <Image
-                alt="Magma"
-                src="/images/magma.png"
-                width={500}
-                height={300}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </a>
-            <div className="cursor">
-              <p>View Site</p>
-            </div>
+          <div className="image">
+            <Image
+              alt="Magma"
+              src="/images/magma.png"
+              width={500}
+              height={300}
+            />
           </div>
         </div>
 
-        {/* Project 6: Tala Clone */}
+        {/* Project 8: Tala Clone */}
         <div
           onClick={() => openTab("https://get-tala.vercel.app")}
           className="project"
         >
-          <div className="container">
-            <div className="dot"></div>
-            <h3>Tala Clone</h3>
-          </div>
-          <div className="container">
-            <div className="skills">
-              <span style={{ "--i": 0 } as any}>HTML</span>
-              <span style={{ "--i": 1 } as any}>CSS</span>
-              <span style={{ "--i": 3 } as any}>JAVASCRIPT</span>
-              <span style={{ "--i": 4 } as any}>GSAP</span>
+          <div className="left-content">
+            <div className="title-container">
+              <div className="dot"></div>
+              <h3>Tala Clone</h3>
+            </div>
+            <div className="skills-container">
+              <div className="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JAVASCRIPT</span>
+                <span>GSAP</span>
+              </div>
             </div>
           </div>
-          <div style={{ backgroundColor: "#131313" }} className="image">
-            <a
-              target="_blank"
-              href="https://get-tala.vercel.app"
-              rel="noreferrer"
-            >
-              <Image
-                alt="Project Tala"
-                src="/images/tala.png"
-                width={500}
-                height={300}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </a>
+          <div className="image">
+            <Image
+              alt="Project Tala"
+              src="/images/tala.png"
+              width={500}
+              height={300}
+            />
           </div>
         </div>
 
-        {/* Project 7: Huncho Apes */}
+        {/* Project 9: Huncho Apes */}
         <div
           onClick={() => openTab("https://huncho-drop.vercel.app")}
           className="project"
         >
-          <div className="container">
-            <div className="dot"></div>
-            <h3>Huncho Apes</h3>
-          </div>
-          <div className="container">
-            <div className="skills">
-              <span style={{ "--i": 0 } as any}>HTML</span>
-              <span style={{ "--i": 1 } as any}>CSS</span>
-              <span style={{ "--i": 2 } as any}>TYPESCRIPT</span>
-              <span style={{ "--i": 3 } as any}>THIRDWEB</span>
+          <div className="left-content">
+            <div className="title-container">
+              <div className="dot"></div>
+              <h3>Huncho Apes</h3>
+            </div>
+            <div className="skills-container">
+              <div className="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>TYPESCRIPT</span>
+                <span>THIRDWEB</span>
+              </div>
             </div>
           </div>
           <div className="image">
-            <a
-              target="_blank"
-              href="https://huncho-drop.vercel.app"
-              rel="noreferrer"
-            >
-              <Image
-                alt="Project Huncho Apes"
-                src="/images/hunchoApes.png"
-                width={500}
-                height={300}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </a>
+            <Image
+              alt="Project Huncho Apes"
+              src="/images/hunchoApes.png"
+              width={500}
+              height={300}
+            />
           </div>
         </div>
       </div>
