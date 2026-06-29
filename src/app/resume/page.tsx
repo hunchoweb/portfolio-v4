@@ -9,7 +9,9 @@ import SkillList from "./components/SkillList";
 import PrintButton from "./components/PrintButton";
 
 export const metadata: Metadata = {
-  title: `${resume.name} — ${resume.title}`,
+  title: {
+    absolute: `${resume.name} Resume`,
+  },
   description: resume.summary,
 };
 

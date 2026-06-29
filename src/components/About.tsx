@@ -54,11 +54,11 @@ const About = () => {
 
         <div className="text">
           <p>
-            I&apos;m Ayo. You might also know me as Huncho 🐐. I&apos;m a
-            logical, flexible and creative <b> front end developer</b> with a
-            passion for finding efficient solutions to complex problems and
-            spends a huge chunk of my time down internet rabbit holes in search
-            for inspiration or answers. 💯
+            I&apos;m Odunayo Ojowa. You might also know me as Ayo or Huncho
+            🐐. I&apos;m a logical, flexible and creative <b>frontend
+            engineer</b> with a passion for finding efficient solutions to
+            complex problems, and I spend a huge chunk of my time down
+            internet rabbit holes in search for inspiration or answers. 💯
             <br /> <br /> Experience with code design, development, and
             maintenance. At the heart, I am a problem solver who enjoys creating
             meaningful experiences by focusing on what matters most. I like to

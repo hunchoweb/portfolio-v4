@@ -4,7 +4,9 @@ import styles from "./cv.module.scss";
 import PrintButton from "./PrintButton";
 
 export const metadata: Metadata = {
-  title: `${cv.name} - ${cv.title} CV`,
+  title: {
+    absolute: `${cv.name} CV`,
+  },
   description: cv.summary.join(" "),
 };
 

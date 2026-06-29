@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 
@@ -53,16 +53,24 @@ const Hero = () => {
           <div className="t1">
             <h2>
               <span>
-                FRONT-END
+                ODUNAYO
                 <br />
-                DEVELOPER
+                OJOWA
               </span>
             </h2>
             <div className="images">
-              <img alt={images[imageIndex]} src={currentImage} />
+              <Image
+                alt={images[imageIndex]}
+                src={currentImage}
+                width={250}
+                height={250}
+                priority
+              />
             </div>
           </div>
           <h2>
+            FRONT-END ENGINEER
+            <br />
             PASSIONATE ABOUT
             <br />
             CRAFTING<span> SUPERB</span>
@@ -73,11 +81,12 @@ const Hero = () => {
         <div className="scroller">
           <div className="bg">
             <div className="circle">
-              <img
+              <Image
                 alt="arrow down"
                 className="arrowDown"
                 src="/svgs/arrowDown.svg"
-                style={{ width: "auto" }}
+                width={16}
+                height={16}
               />
               <div className="roundText" id="text">
                 <p>SCROLL DOWN FOR MORE . SCROLL DOWN FOR MORE .</p>

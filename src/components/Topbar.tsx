@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Switch from "./icons/Switch";
 import Hamburger from "./icons/Hamburger";
 import MobileNav from "./MobileNav";
 import { useLenis } from "@/contexts/LenisContext";
-import styles from "./Topbar.module.scss";
 
 const Topbar = () => {
   const [mobileNavActive, setMobileNavActive] = useState(false);
@@ -13,10 +12,6 @@ const Topbar = () => {
 
   const toggleNav = () => {
     setMobileNavActive(!mobileNavActive);
-  };
-
-  const toggleLight = () => {
-    document.body.classList.toggle("light");
   };
 
   const handleScrollTo = (target: string) => {
@@ -28,7 +23,7 @@ const Topbar = () => {
       <header className={`${mobileNavActive ? "fixed" : ""}`}>
         <div className="header container">
           <div className="logo" style={{ flexGrow: 1 }}>
-            <p>ODUNAYOMIDE.</p>
+            <p>ODUNAYO OJOWA.</p>
           </div>
 
           <div className="controls">
