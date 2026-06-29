@@ -812,9 +812,8 @@ header {
       .image {
         position: absolute;
         right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: 1rem;
+        top: 0;
+        z-index: 2;
         overflow: hidden;
 
         img {
@@ -882,6 +881,8 @@ header {
 
         // Hover state
         &:hover {
+          z-index: 2 !important;
+
           .title-container {
             .dot {
               opacity: 1; // Show dot on hover
