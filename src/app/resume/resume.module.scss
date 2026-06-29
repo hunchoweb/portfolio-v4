@@ -1,0 +1,656 @@
+// -----------------------------------------------------------------------------
+// Resume route — scoped styles.
+// Everything is nested under `.page` / `.paper` so nothing leaks into the rest
+// of the portfolio, and the global dark theme / element resets don't bleed in.
+// Sizing is in px (not rem) on purpose: the global `html { font-size: 62.5% }`
+// rescales rem at breakpoints, which we don't want for a precise A4 document.
+// -----------------------------------------------------------------------------
+
+// Design tokens (local to the resume)
+$ink: #111113; // primary text
+$ink-soft: #35363a; // body copy
+$muted: #6f727a; // meta / secondary
+$faint: #afb1b7; // de-emphasised
+$line: #f0f0f3; // thin dividers
+$accent: #5552c8; // muted, print-friendly accent
+$paper: #ffffff;
+$backdrop: #eeeeef;
+$paper-width: 210mm;
+$paper-height: 297mm;
+
+$sans: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif;
+$mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+
+// A4 page geometry for print (global at-rule, not scoped)
+@page {
+  size: A4;
+  margin: 0;
+}
+
+// Screen backdrop -------------------------------------------------------------
+.page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $backdrop;
+  background-image: none;
+  padding: 32px 24px 72px;
+
+  // Override the global green ::selection just for the resume
+  ::selection {
+    background: rgba($accent, 0.18);
+    color: $ink;
+  }
+}
+
+// Floating "Download PDF" control — screen only --------------------------------
+.toolbar {
+  width: 100%;
+  max-width: $paper-width;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.download {
+  appearance: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: $paper;
+  background: $ink;
+  border: none;
+  border-radius: 7px;
+  padding: 9px 14px;
+  transition: background 0.18s ease, transform 0.18s ease;
+
+  span {
+    color: inherit;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  &:hover {
+    background: #2e2e33;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 2px;
+  }
+}
+
+// The A4 "paper" --------------------------------------------------------------
+.paper {
+  width: 100%;
+  max-width: $paper-width;
+  min-height: $paper-height;
+  background: $paper;
+  color: $ink-soft;
+  font-family: $sans;
+  font-size: 12.1px;
+  line-height: 1.6;
+  border: 1px solid rgba(17, 17, 19, 0.045);
+  border-radius: 2px;
+  box-shadow: none;
+  padding: 14mm 14mm 12mm;
+
+  // Normalise text elements (the global stylesheet does `p { all: unset }` etc.)
+  p {
+    all: revert;
+    margin: 0;
+    color: inherit;
+    font-family: $sans;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    color: $ink;
+    font-family: $sans;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: $accent;
+    text-decoration: none;
+    transition: color 0.15s ease;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  strong,
+  b {
+    color: $ink;
+    font-weight: 600;
+  }
+}
+
+// Header ----------------------------------------------------------------------
+.header {
+  padding-bottom: 24px;
+  border-bottom: 1px solid $line;
+}
+
+.identity {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-size: 58px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: $ink;
+  line-height: 0.9;
+}
+
+.titleBlock {
+  text-align: right;
+  padding-top: 8px;
+}
+
+.role {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: $accent;
+  line-height: 1.15;
+}
+
+.tagline {
+  margin-top: 8px;
+  font-family: $mono;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #878991;
+}
+
+.contact {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 9.4px;
+  line-height: 1.45;
+  color: $faint;
+}
+
+.contactRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+}
+
+.paper .contactItem {
+  color: #777a82;
+  white-space: nowrap;
+
+  & + .contactItem::before {
+    content: "·";
+    color: #c1c3c8;
+    margin: 0 18px;
+  }
+}
+
+.paper .contactLabel {
+  color: #aeb0b6;
+  margin-right: 5px;
+}
+
+// Hero statement --------------------------------------------------------------
+.hero {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $ink;
+  letter-spacing: 0;
+  max-width: 72ch;
+}
+
+// Two-column body -------------------------------------------------------------
+.body {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(178px, 0.76fr);
+  column-gap: 30px;
+}
+
+.main {
+  min-width: 0;
+}
+
+.aside {
+  min-width: 0;
+  max-width: 100%;
+  color: $muted;
+  overflow-wrap: anywhere;
+}
+
+// Section ---------------------------------------------------------------------
+.section {
+  & + & {
+    margin-top: 24px;
+  }
+}
+
+.aside .section + .section {
+  margin-top: 24px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: $mono;
+  font-size: 8.8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $muted;
+  margin-bottom: 16px;
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: $line;
+  }
+}
+
+// Experience ------------------------------------------------------------------
+.experienceItem {
+  break-inside: avoid;
+  page-break-inside: avoid;
+
+  & + & {
+    margin-top: 40px;
+  }
+}
+
+.expHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.expRole {
+  font-size: 13.4px;
+  font-weight: 700;
+  color: $ink;
+  letter-spacing: 0;
+}
+
+.expCompany {
+  color: $accent;
+  font-weight: 600;
+}
+
+.expLocation {
+  color: $muted;
+
+  &::before {
+    content: " / ";
+    color: $faint;
+  }
+}
+
+.expPeriod {
+  font-size: 10.2px;
+  font-weight: 500;
+  color: #7b7e86;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+}
+
+.expMeta {
+  margin-top: 4px;
+  font-size: 10.4px;
+  color: $muted;
+}
+
+.bullets {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  li {
+    position: relative;
+    padding-left: 15px;
+    font-size: 11.6px;
+    line-height: 1.72;
+    color: $ink-soft;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: $accent;
+    }
+  }
+}
+
+// Projects --------------------------------------------------------------------
+.projectItem {
+  break-inside: avoid;
+  page-break-inside: avoid;
+
+  & + & {
+    margin-top: 16px;
+  }
+}
+
+.projectName {
+  font-size: 11.2px;
+  font-weight: 600;
+  color: $ink;
+}
+
+.projectDesc {
+  margin-top: 4px;
+  font-size: 9.8px;
+  line-height: 1.5;
+  color: #777a82;
+}
+
+.projectStack {
+  margin-top: 4px;
+  font-family: $mono;
+  font-size: 8.4px;
+  letter-spacing: 0;
+  color: $muted;
+}
+
+// Skills ----------------------------------------------------------------------
+.skillList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 12px;
+  row-gap: 4px;
+}
+
+.skill {
+  min-width: 0;
+  font-size: 9.6px;
+  line-height: 1.45;
+  color: $muted;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+// Education -------------------------------------------------------------------
+.eduItem {
+  break-inside: avoid;
+  page-break-inside: avoid;
+
+  & + & {
+    margin-top: 10px;
+  }
+}
+
+.eduQual {
+  font-size: 10.8px;
+  font-weight: 600;
+  color: $ink;
+}
+
+.eduField {
+  font-size: 9.8px;
+  color: $muted;
+  margin-top: 1px;
+}
+
+.eduMeta {
+  margin-top: 3px;
+  font-size: 9.6px;
+  color: $muted;
+}
+
+// Responsive (screen) ---------------------------------------------------------
+@media (max-width: 720px) {
+  .page {
+    padding: 18px 12px 48px;
+  }
+
+  .paper {
+    min-height: 0;
+    padding: 34px 24px 32px;
+    border-radius: 4px;
+  }
+
+  .identity {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .titleBlock {
+    text-align: left;
+  }
+
+  .name {
+    font-size: 34px;
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .expHead {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// PRINT — clean one-page A4 output
+// -----------------------------------------------------------------------------
+@media print {
+  .page :global(header),
+  .page :global(nav),
+  .page :global(footer),
+  .toolbar {
+    display: none !important;
+  }
+
+  .page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    width: $paper-width;
+    height: $paper-height;
+    padding: 0;
+    background: #ffffff;
+    background-image: none;
+    overflow: hidden;
+  }
+
+  .paper {
+    width: $paper-width;
+    max-width: $paper-width;
+    min-height: 0;
+    height: $paper-height;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    padding: 12mm 12mm 10mm;
+    overflow: hidden;
+    // Print uses a near-screen scale; only lightly tightened to preserve one A4 page.
+    font-size: 10.2px;
+    line-height: 1.48;
+  }
+
+  .header {
+    padding-bottom: 12px;
+  }
+
+  .identity {
+    gap: 18px;
+  }
+
+  .name {
+    font-size: 52px;
+    line-height: 0.9;
+  }
+
+  .hero {
+    margin-top: 12px;
+    font-size: 11.2px;
+    line-height: 1.45;
+    max-width: 76ch;
+  }
+
+  .body {
+    margin-top: 16px;
+    grid-template-columns: minmax(0, 2fr) minmax(158px, 0.76fr);
+    column-gap: 24px;
+  }
+
+  .expHead {
+    grid-template-columns: minmax(0, 1fr) 92px;
+    gap: 12px;
+  }
+
+  .section + .section {
+    margin-top: 16px;
+  }
+
+  .aside .section + .section {
+    margin-top: 13px;
+  }
+
+  .sectionLabel {
+    margin-bottom: 8px;
+    font-size: 8.2px;
+  }
+
+  .experienceItem + .experienceItem {
+    margin-top: 15px;
+  }
+
+  .bullets {
+    margin-top: 6px;
+    gap: 4.5px;
+
+    li {
+      padding-left: 12px;
+      font-size: 9.4px;
+      line-height: 1.45;
+
+      &::before {
+        top: 6.4px;
+        width: 3px;
+        height: 3px;
+      }
+    }
+  }
+
+  .expRole {
+    font-size: 10.8px;
+  }
+
+  .expPeriod,
+  .expMeta {
+    font-size: 8.8px;
+  }
+
+  .contact {
+    margin-top: 10px;
+    gap: 2px 9px;
+    font-size: 8.6px;
+
+    .contactItem + .contactItem::before {
+      margin: 0 8px;
+    }
+  }
+
+  .role {
+    font-size: 14px;
+  }
+
+  .tagline {
+    margin-top: 4px;
+    font-size: 10px;
+  }
+
+  .projectName,
+  .eduQual {
+    font-size: 9.6px;
+  }
+
+  .projectDesc {
+    font-size: 8.4px;
+    line-height: 1.38;
+  }
+
+  .projectStack,
+  .skill,
+  .eduMeta {
+    font-size: 7.8px;
+  }
+
+  .skillList {
+    column-gap: 8px;
+    row-gap: 2px;
+  }
+
+  .skill {
+    line-height: 1.35;
+  }
+
+  .eduField {
+    font-size: 8.6px;
+  }
+
+  // Keep accent colour and dividers in the printed PDF.
+  .paper,
+  .name,
+  .role,
+  .expCompany,
+  .bullets li::before,
+  .paper a {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
