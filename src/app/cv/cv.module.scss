@@ -1,0 +1,661 @@
+$ink: #111113;
+$ink-soft: #35363a;
+$muted: #6f727a;
+$faint: #afb1b7;
+$line: #f0f0f3;
+$accent: #5552c8;
+$paper: #ffffff;
+$backdrop: #eeeeef;
+$paper-width: 210mm;
+$paper-height: 297mm;
+
+$sans: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif;
+$mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $backdrop;
+  background-image: none;
+  padding: 32px 24px 72px;
+
+  ::selection {
+    background: rgba($accent, 0.18);
+    color: $ink;
+  }
+}
+
+.toolbar {
+  width: 100%;
+  max-width: $paper-width;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.download {
+  appearance: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 500;
+  color: $paper;
+  background: $ink;
+  border: none;
+  border-radius: 7px;
+  padding: 9px 14px;
+
+  span {
+    color: inherit;
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+
+.sheetStack {
+  width: 100%;
+  max-width: $paper-width;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.paper {
+  width: 100%;
+  max-width: $paper-width;
+  min-height: $paper-height;
+  background: $paper;
+  color: $ink-soft;
+  font-family: $sans;
+  font-size: 11.15px;
+  line-height: 1.52;
+  border: 1px solid rgba(17, 17, 19, 0.045);
+  border-radius: 2px;
+  box-shadow: none;
+  padding: 13mm 13mm 11mm;
+
+  p {
+    all: revert;
+    margin: 0;
+    color: inherit;
+    font-family: $sans;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    color: $ink;
+    font-family: $sans;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: $accent;
+    text-decoration: none;
+  }
+
+  strong,
+  b {
+    color: $ink;
+    font-weight: 600;
+  }
+}
+
+.header {
+  padding-bottom: 18px;
+  border-bottom: 1px solid $line;
+}
+
+.identity {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: $ink;
+  line-height: 0.9;
+}
+
+.titleBlock {
+  text-align: right;
+  padding-top: 7px;
+}
+
+.role {
+  font-size: 18px;
+  font-weight: 600;
+  color: $accent;
+  line-height: 1.15;
+}
+
+.tagline {
+  margin-top: 7px;
+  font-family: $mono;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #878991;
+}
+
+.contact {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 8.8px;
+  line-height: 1.45;
+  color: $faint;
+}
+
+.contactRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+}
+
+.paper .contactItem {
+  color: #777a82;
+  white-space: nowrap;
+
+  & + .contactItem::before {
+    content: "·";
+    color: #c1c3c8;
+    margin: 0 14px;
+  }
+}
+
+.paper .contactLabel {
+  color: #aeb0b6;
+  margin-right: 5px;
+}
+
+.continuedHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid $line;
+  font-family: $mono;
+  font-size: 8.6px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.cvGrid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(178px, 0.76fr);
+  column-gap: 30px;
+}
+
+.paperContinued .cvGrid {
+  margin-top: 0;
+}
+
+.main,
+.aside {
+  min-width: 0;
+}
+
+.aside {
+  max-width: 100%;
+  color: $muted;
+  overflow-wrap: anywhere;
+}
+
+.section + .section {
+  margin-top: 20px;
+}
+
+.aside .section + .section {
+  margin-top: 22px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: $mono;
+  font-size: 8.3px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $muted;
+  margin-bottom: 14px;
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: $line;
+  }
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.expertise {
+  font-size: 9.6px;
+  line-height: 1.58;
+  color: $muted;
+}
+
+.skillGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skillGroup {
+  font-size: 9.4px;
+  line-height: 1.48;
+  color: $muted;
+
+  strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 8.9px;
+    color: $ink;
+  }
+}
+
+.experienceItem {
+  break-inside: avoid;
+  page-break-inside: avoid;
+
+  & + & {
+    margin-top: 20px;
+  }
+}
+
+.experienceContinuation {
+  padding-top: 0;
+}
+
+.expHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 118px;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.expRole {
+  font-size: 12px;
+  font-weight: 700;
+  color: $ink;
+}
+
+.expCompany {
+  color: $accent;
+  font-weight: 600;
+}
+
+.expLocation,
+.expWebsite {
+  color: $muted;
+
+  &::before {
+    content: " / ";
+    color: $faint;
+  }
+}
+
+.expPeriod {
+  font-size: 9px;
+  font-weight: 500;
+  color: #7b7e86;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.expMeta {
+  margin-top: 5px;
+  font-size: 9.4px;
+  color: $muted;
+}
+
+.bullets,
+.compactBullets {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  li {
+    position: relative;
+    padding-left: 13px;
+    font-size: 10px;
+    line-height: 1.52;
+    color: $ink-soft;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 7px;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: $accent;
+    }
+  }
+}
+
+.compactBullets {
+  margin-top: 0;
+  gap: 6px;
+
+  li {
+    font-size: 9.4px;
+    color: $muted;
+  }
+}
+
+.projectItem {
+  break-inside: avoid;
+  page-break-inside: avoid;
+
+  & + & {
+    margin-top: 13px;
+  }
+}
+
+.projectName {
+  font-size: 10.4px;
+  font-weight: 600;
+  color: $ink;
+}
+
+.projectMeta {
+  margin-top: 4px;
+  font-size: 8.8px;
+  font-weight: 500;
+  color: $muted;
+}
+
+.projectDesc {
+  margin-top: 5px;
+  font-size: 9px;
+  line-height: 1.4;
+  color: #777a82;
+}
+
+.projectStack {
+  margin-top: 5px;
+  font-family: $mono;
+  font-size: 7.8px;
+  color: $muted;
+}
+
+.eduQual {
+  font-size: 10px;
+  font-weight: 600;
+  color: $ink;
+}
+
+.eduMeta {
+  margin-top: 5px;
+  font-size: 9px;
+  color: $muted;
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 18px 12px 48px;
+  }
+
+  .paper {
+    min-height: 0;
+    padding: 34px 24px 32px;
+  }
+
+  .identity {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .titleBlock {
+    text-align: left;
+  }
+
+  .name {
+    font-size: 34px;
+  }
+
+  .cvGrid {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .expHead {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+@media print {
+  .page :global(header),
+  .page :global(nav),
+  .page :global(footer),
+  .toolbar {
+    display: none !important;
+  }
+
+  .page {
+    display: block;
+    min-height: 0;
+    width: $paper-width;
+    padding: 0;
+    background: #ffffff;
+    background-image: none;
+    overflow: visible;
+  }
+
+  .sheetStack {
+    display: block;
+    max-width: none;
+    width: $paper-width;
+  }
+
+  .paper {
+    width: $paper-width;
+    max-width: $paper-width;
+    min-height: 0;
+    height: $paper-height;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    padding: 11.5mm 11.5mm 9.5mm;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+    font-size: 10.4px;
+    line-height: 1.46;
+  }
+
+  .paper:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .header {
+    padding-bottom: 12px;
+  }
+
+  .name {
+    font-size: 50px;
+  }
+
+  .role {
+    font-size: 16px;
+  }
+
+  .tagline {
+    margin-top: 4px;
+    font-size: 9.6px;
+  }
+
+  .contact {
+    margin-top: 10px;
+    gap: 3px;
+    font-size: 8.4px;
+
+    .contactItem + .contactItem::before {
+      margin: 0 10px;
+    }
+  }
+
+  .continuedHeader {
+    margin-bottom: 14px;
+    padding-bottom: 9px;
+    font-size: 7.8px;
+  }
+
+  .cvGrid {
+    margin-top: 16px;
+    grid-template-columns: minmax(0, 2fr) minmax(155px, 0.76fr);
+    column-gap: 24px;
+  }
+
+  .section + .section {
+    margin-top: 15px;
+  }
+
+  .aside .section + .section {
+    margin-top: 15px;
+  }
+
+  .sectionLabel {
+    margin-bottom: 11px;
+    font-size: 8px;
+  }
+
+  .summary {
+    gap: 6px;
+  }
+
+  .expertise,
+  .skillGroup,
+  .compactBullets li {
+    font-size: 8.8px;
+    line-height: 1.38;
+  }
+
+  .skillGroups {
+    gap: 6px;
+  }
+
+  .experienceItem + .experienceItem {
+    margin-top: 14px;
+  }
+
+  .expHead {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    gap: 12px;
+  }
+
+  .expRole {
+    font-size: 10.2px;
+  }
+
+  .expMeta,
+  .expPeriod {
+    font-size: 8.4px;
+  }
+
+  .expMeta {
+    margin-top: 5px;
+  }
+
+  .bullets {
+    margin-top: 5px;
+    gap: 3px;
+
+    li {
+      padding-left: 11px;
+      font-size: 8.6px;
+      line-height: 1.34;
+
+      &::before {
+        top: 5.8px;
+        width: 2.5px;
+        height: 2.5px;
+      }
+    }
+  }
+
+  .compactBullets {
+    gap: 5px;
+  }
+
+  .projectItem + .projectItem {
+    margin-top: 11px;
+  }
+
+  .projectName,
+  .eduQual {
+    font-size: 9.2px;
+  }
+
+  .projectMeta,
+  .projectDesc,
+  .eduMeta {
+    font-size: 8.2px;
+  }
+
+  .projectDesc {
+    margin-top: 5px;
+    line-height: 1.35;
+  }
+
+  .projectStack {
+    margin-top: 5px;
+    font-size: 7.4px;
+  }
+
+  .paper,
+  .name,
+  .role,
+  .expCompany,
+  .bullets li::before,
+  .compactBullets li::before,
+  .paper a {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

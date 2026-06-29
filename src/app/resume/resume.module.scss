@@ -280,7 +280,7 @@ $mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: $muted;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 
   &::after {
     content: "";
@@ -338,7 +338,7 @@ $mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
 }
 
 .expMeta {
-  margin-top: 4px;
+  margin-top: 6px;
   font-size: 10.4px;
   color: $muted;
 }
@@ -386,7 +386,7 @@ $mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
 }
 
 .projectDesc {
-  margin-top: 4px;
+  margin-top: 6px;
   font-size: 9.8px;
   line-height: 1.5;
   color: #777a82;
@@ -440,7 +440,7 @@ $mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
 }
 
 .eduMeta {
-  margin-top: 3px;
+  margin-top: 5px;
   font-size: 9.6px;
   color: $muted;
 }
@@ -561,7 +561,7 @@ $mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
   }
 
   .sectionLabel {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 8.2px;
   }
 
@@ -595,6 +595,10 @@ $mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
     font-size: 8.8px;
   }
 
+  .expMeta {
+    margin-top: 5px;
+  }
+
   .contact {
     margin-top: 10px;
     gap: 2px 9px;
@@ -620,6 +624,7 @@ $mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
   }
 
   .projectDesc {
+    margin-top: 5px;
     font-size: 8.4px;
     line-height: 1.38;
   }
