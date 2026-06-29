@@ -35,257 +35,119 @@ const Work = () => {
     window.open(link, "_blank");
   };
 
+  const projects = [
+    {
+      title: "Double Shore",
+      link: "https://double-shore.com/",
+      image: "/images/double-shore.png",
+      alt: "Double Shore",
+      skills: ["NEXT JS", "GSAP", "UMBRACO CMS", "TYPESCRIPT"],
+    },
+    {
+      title: "Janus Payroll",
+      link: "https://dev.januspayroll.com/",
+      image: "/images/janus-payroll.png",
+      alt: "Janus Payroll",
+      skills: ["REACT", "TYPESCRIPT", "REDUX TOOLKIT", "TANSTACK QUERY"],
+    },
+    {
+      title: "Faadio",
+      link: "https://faadio.com/",
+      image: "/images/faadio.png",
+      alt: "Faadio",
+      skills: ["NEXT JS", "REACT", "TYPESCRIPT"],
+    },
+    {
+      title: "Linear",
+      link: "https://linear-clone-omega.vercel.app",
+      image: "/images/linear.png",
+      alt: "Linear",
+      skills: ["HTML", "CSS", "TYPESCRIPT"],
+    },
+    {
+      title: "Lightship",
+      link: "https://lightship-snowy.vercel.app/",
+      image: "/images/Lightship.png",
+      alt: "Lightship",
+      skills: ["HTML", "CSS", "JAVASCRIPT", "GSAP"],
+    },
+    {
+      title: "Magma DeFi",
+      link: "https://magma-nine.vercel.app",
+      image: "/images/magma.png",
+      alt: "Magma",
+      skills: ["HTML", "CSS", "JAVASCRIPT", "GSAP"],
+    },
+    {
+      title: "Tala Clone",
+      link: "https://get-tala.vercel.app",
+      image: "/images/tala.png",
+      alt: "Project Tala",
+      skills: ["HTML", "CSS", "JAVASCRIPT", "GSAP"],
+    },
+    {
+      title: "Huncho Apes",
+      link: "https://huncho-drop.vercel.app",
+      image: "/images/hunchoApes.png",
+      alt: "Project Huncho Apes",
+      skills: ["HTML", "CSS", "TYPESCRIPT", "THIRDWEB"],
+    },
+    {
+      title: "Chat Translator",
+      link: "https://chat-translate-app.vercel.app/",
+      image: "/images/translatorChat.png",
+      alt: "Chat Translator",
+      skills: ["NEXT JS", "TAILWIND CSS", "TYPESCRIPT", "FIREBASE"],
+    },
+    {
+      title: "MOQO",
+      link: "https://moqo-clone.vercel.app/",
+      image: "/images/Moqo.png",
+      alt: "MOQO",
+      skills: ["NEXT JS", "TAILWIND CSS", "TYPESCRIPT", "GSAP"],
+    },
+    {
+      title: "OBYS",
+      link: "https://obys-eta.vercel.app/",
+      image: "/images/Obys.png",
+      alt: "OBYS",
+      skills: ["REACT", "TAILWIND CSS", "THREE JS", "GSAP", "FRAMER", "SHERY JS"],
+    },
+  ];
+
   return (
     <section className="work-section" id="work">
       <SectionHeader text="WORK" />
       <div className="projects">
-        {/* Project 1: Chat Translator */}
-        <div
-          onClick={() => openTab("https://chat-translate-app.vercel.app/")}
-          className="project first"
-        >
-          <div className="left-content">
-            <div className="title-container">
-              <div className="dot"></div>
-              <h3>Chat Translator</h3>
-            </div>
-            <div className="skills-container">
-              <div className="skills">
-                <span>NEXT JS</span>
-                <span>TAILWIND CSS</span>
-                <span>TYPESCRIPT</span>
-                <span>FIREBASE</span>
+        {projects.map((project, index) => (
+          <div
+            key={project.title}
+            onClick={() => openTab(project.link)}
+            className={`project${index === 0 ? " first" : ""}`}
+          >
+            <div className="left-content">
+              <div className="title-container">
+                <div className="dot"></div>
+                <h3>{project.title}</h3>
+              </div>
+              <div className="skills-container">
+                <div className="skills">
+                  {project.skills.map((skill) => (
+                    <span key={skill}>{skill}</span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="image">
-            <Image
-              alt="Chat Translator"
-              src="/images/translatorChat.png"
-              width={500}
-              height={300}
-            />
-          </div>
-        </div>
-
-        {/* Project 2: MOQO */}
-        <div
-          onClick={() => openTab("https://moqo-clone.vercel.app/")}
-          className="project"
-        >
-          <div className="left-content">
-            <div className="title-container">
-              <div className="dot"></div>
-              <h3>MOQO</h3>
-            </div>
-            <div className="skills-container">
-              <div className="skills">
-                <span>NEXT JS</span>
-                <span>TAILWIND CSS</span>
-                <span>TYPESCRIPT</span>
-                <span>GSAP</span>
-              </div>
+            <div className="image">
+              <Image
+                alt={project.alt}
+                src={project.image}
+                width={500}
+                height={300}
+              />
             </div>
           </div>
-          <div className="image">
-            <Image alt="MOQO" src="/images/Moqo.png" width={500} height={300} />
-          </div>
-        </div>
-
-        {/* Project 3: OBYS */}
-        <div
-          onClick={() => openTab("https://obys-eta.vercel.app/")}
-          className="project"
-        >
-          <div className="left-content">
-            <div className="title-container">
-              <div className="dot"></div>
-              <h3>OBYS</h3>
-            </div>
-            <div className="skills-container">
-              <div className="skills">
-                <span>REACT</span>
-                <span>TAILWIND CSS</span>
-                <span>THREE JS</span>
-                <span>GSAP</span>
-                <span>FRAMER</span>
-                <span>SHERY JS</span>
-              </div>
-            </div>
-          </div>
-          <div className="image">
-            <Image alt="OBYS" src="/images/Obys.png" width={500} height={300} />
-          </div>
-        </div>
-
-        {/* Project 4: RAFT */}
-        <div
-          onClick={() => openTab("https://raceiorr.vercel.app/")}
-          className="project"
-        >
-          <div className="left-content">
-            <div className="title-container">
-              <div className="dot"></div>
-              <h3>RAFT</h3>
-            </div>
-            <div className="skills-container">
-              <div className="skills">
-                <span>NEXT JS</span>
-                <span>TAILWIND CSS</span>
-                <span>GSAP</span>
-                <span>TYPESCRIPT</span>
-                <span>FRAMER</span>
-              </div>
-            </div>
-          </div>
-          <div className="image">
-            <Image alt="RAFT" src="/images/Raft.png" width={500} height={300} />
-          </div>
-        </div>
-
-        {/* Project 5: Linear */}
-        <div
-          onClick={() => openTab("https://linear-clone-omega.vercel.app")}
-          className="project"
-        >
-          <div className="left-content">
-            <div className="title-container">
-              <div className="dot"></div>
-              <h3>Linear</h3>
-            </div>
-            <div className="skills-container">
-              <div className="skills">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>TYPESCRIPT</span>
-              </div>
-            </div>
-          </div>
-          <div className="image">
-            <Image
-              alt="Linear"
-              src="/images/linear.png"
-              width={500}
-              height={300}
-            />
-          </div>
-        </div>
-
-        {/* Project 6: Lightship */}
-        <div
-          onClick={() => openTab("https://lightship-snowy.vercel.app/")}
-          className="project"
-        >
-          <div className="left-content">
-            <div className="title-container">
-              <div className="dot"></div>
-              <h3>Lightship</h3>
-            </div>
-            <div className="skills-container">
-              <div className="skills">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JAVASCRIPT</span>
-                <span>GSAP</span>
-              </div>
-            </div>
-          </div>
-          <div className="image">
-            <Image
-              alt="Lightship"
-              src="/images/Lightship.png"
-              width={500}
-              height={300}
-            />
-          </div>
-        </div>
-
-        {/* Project 7: Magma DeFi */}
-        <div
-          onClick={() => openTab("https://magma-nine.vercel.app")}
-          className="project"
-        >
-          <div className="left-content">
-            <div className="title-container">
-              <div className="dot"></div>
-              <h3>Magma DeFi</h3>
-            </div>
-            <div className="skills-container">
-              <div className="skills">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JAVASCRIPT</span>
-                <span>GSAP</span>
-              </div>
-            </div>
-          </div>
-          <div className="image">
-            <Image
-              alt="Magma"
-              src="/images/magma.png"
-              width={500}
-              height={300}
-            />
-          </div>
-        </div>
-
-        {/* Project 8: Tala Clone */}
-        <div
-          onClick={() => openTab("https://get-tala.vercel.app")}
-          className="project"
-        >
-          <div className="left-content">
-            <div className="title-container">
-              <div className="dot"></div>
-              <h3>Tala Clone</h3>
-            </div>
-            <div className="skills-container">
-              <div className="skills">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JAVASCRIPT</span>
-                <span>GSAP</span>
-              </div>
-            </div>
-          </div>
-          <div className="image">
-            <Image
-              alt="Project Tala"
-              src="/images/tala.png"
-              width={500}
-              height={300}
-            />
-          </div>
-        </div>
-
-        {/* Project 9: Huncho Apes */}
-        <div
-          onClick={() => openTab("https://huncho-drop.vercel.app")}
-          className="project"
-        >
-          <div className="left-content">
-            <div className="title-container">
-              <div className="dot"></div>
-              <h3>Huncho Apes</h3>
-            </div>
-            <div className="skills-container">
-              <div className="skills">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>TYPESCRIPT</span>
-                <span>THIRDWEB</span>
-              </div>
-            </div>
-          </div>
-          <div className="image">
-            <Image
-              alt="Project Huncho Apes"
-              src="/images/hunchoApes.png"
-              width={500}
-              height={300}
-            />
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
