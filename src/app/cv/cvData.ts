@@ -6,6 +6,7 @@ export interface ContactLink {
 
 export interface ExperienceEntry {
   company: string;
+  context?: string;
   location: string;
   website?: string;
   websiteUrl?: string;
@@ -26,7 +27,30 @@ export interface SkillGroup {
   items: string;
 }
 
-export const cv = {
+export interface EducationEntry {
+  qualification: string;
+  institution: string;
+  period: string;
+}
+
+export interface CvData {
+  name: string;
+  title: string;
+  tagline: string;
+  location: string;
+  phone: string;
+  email: string;
+  links: ContactLink[];
+  summary: string[];
+  expertise: string;
+  skills: SkillGroup[];
+  experience: ExperienceEntry[];
+  highlights: string[];
+  projects: ProjectEntry[];
+  education: EducationEntry;
+}
+
+export const cv: CvData = {
   name: "Odunayo Ojowa",
   title: "Frontend Engineer",
   tagline:
