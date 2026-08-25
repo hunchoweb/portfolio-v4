@@ -129,8 +129,8 @@ export const cv: CvData = {
     {
       company: "Janus Payroll",
       location: "Nigeria",
-      website: "dev.januspayroll.com",
-      websiteUrl: "https://dev.januspayroll.com",
+      website: "januspayroll.com",
+      websiteUrl: "https://januspayroll.com",
       role: "Lead Frontend Engineer",
       period: "Sep 2025 - May 2026",
       bullets: [

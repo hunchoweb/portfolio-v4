@@ -45,7 +45,7 @@ const Work = () => {
     },
     {
       title: "Janus Payroll",
-      link: "https://dev.januspayroll.com/",
+      link: "https://januspayroll.com/",
       image: "/images/janus-payroll.png",
       alt: "Janus Payroll",
       skills: ["REACT", "TYPESCRIPT", "REDUX TOOLKIT", "TANSTACK QUERY"],

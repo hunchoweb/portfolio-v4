@@ -82,8 +82,8 @@ export const supportEngineerCv: CvData = {
       company: "Janus Payroll",
       context: "Enterprise Payroll & HR SaaS Platform",
       location: "Nigeria",
-      website: "dev.januspayroll.com",
-      websiteUrl: "https://dev.januspayroll.com",
+      website: "januspayroll.com",
+      websiteUrl: "https://januspayroll.com",
       role: "Lead Frontend Engineer (Enterprise Applications)",
       period: "Sep 2025 - May 2026",
       bullets: [
