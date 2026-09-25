@@ -53,9 +53,9 @@ const Hero = () => {
           <div className="t1">
             <h2>
               <span>
-                FRONT-END
+                AI PRODUCT
                 <br />
-                DEVELOPER
+                ENGINEER
               </span>
             </h2>
             <div className="images">
@@ -63,11 +63,11 @@ const Hero = () => {
             </div>
           </div>
           <h2>
-            PASSIONATE ABOUT
+            BUILDING SYSTEMS
             <br />
-            CRAFTING<span> SUPERB</span>
+            THAT<span> GET WORK</span>
             <br />
-            WEB EXPERIENCES
+            DONE.
           </h2>
         </div>
         <div className="scroller">

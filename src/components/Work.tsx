@@ -37,18 +37,25 @@ const Work = () => {
 
   const projects = [
     {
-      title: "Double Shore",
-      link: "https://double-shore.com/",
-      image: "/images/double-shore.png",
-      alt: "Double Shore",
-      skills: ["NEXT JS", "GSAP", "UMBRACO CMS", "TYPESCRIPT"],
+      title: "Beemcute",
+      link: "https://beemcute.com/",
+      image: "/images/beemcute.png",
+      alt: "Beemcute platform hero showing a work dashboard",
+      skills: ["AI WORK MANAGEMENT", "AI AGENTS", "WHATSAPP AI", "WORKFLOW AUTOMATION"],
     },
     {
       title: "Janus Payroll",
       link: "https://januspayroll.com/",
       image: "/images/janus-payroll.png",
       alt: "Janus Payroll",
-      skills: ["REACT", "TYPESCRIPT", "REDUX TOOLKIT", "TANSTACK QUERY"],
+      skills: ["ENTERPRISE SAAS", "PAYROLL OPERATIONS", "BUSINESS WORKFLOWS", "PRODUCT ENGINEERING"],
+    },
+    {
+      title: "Double Shore",
+      link: "https://double-shore.com/",
+      image: "/images/double-shore.png",
+      alt: "Double Shore",
+      skills: ["PRODUCT ENGINEERING", "NEXT JS", "UMBRACO CMS", "TYPESCRIPT"],
     },
     {
       title: "Faadio",
@@ -58,60 +65,11 @@ const Work = () => {
       skills: ["NEXT JS", "REACT", "TYPESCRIPT"],
     },
     {
-      title: "Linear",
-      link: "https://linear-clone-omega.vercel.app",
-      image: "/images/linear.png",
-      alt: "Linear",
-      skills: ["HTML", "CSS", "TYPESCRIPT"],
-    },
-    {
-      title: "Lightship",
-      link: "https://lightship-snowy.vercel.app/",
-      image: "/images/Lightship.png",
-      alt: "Lightship",
-      skills: ["HTML", "CSS", "JAVASCRIPT", "GSAP"],
-    },
-    {
-      title: "Magma DeFi",
-      link: "https://magma-nine.vercel.app",
-      image: "/images/magma.png",
-      alt: "Magma",
-      skills: ["HTML", "CSS", "JAVASCRIPT", "GSAP"],
-    },
-    {
-      title: "Tala Clone",
-      link: "https://get-tala.vercel.app",
-      image: "/images/tala.png",
-      alt: "Project Tala",
-      skills: ["HTML", "CSS", "JAVASCRIPT", "GSAP"],
-    },
-    {
-      title: "Huncho Apes",
-      link: "https://huncho-drop.vercel.app",
-      image: "/images/hunchoApes.png",
-      alt: "Project Huncho Apes",
-      skills: ["HTML", "CSS", "TYPESCRIPT", "THIRDWEB"],
-    },
-    {
       title: "Chat Translator",
       link: "https://chat-translate-app.vercel.app/",
       image: "/images/translatorChat.png",
       alt: "Chat Translator",
       skills: ["NEXT JS", "TAILWIND CSS", "TYPESCRIPT", "FIREBASE"],
-    },
-    {
-      title: "MOQO",
-      link: "https://moqo-clone.vercel.app/",
-      image: "/images/Moqo.png",
-      alt: "MOQO",
-      skills: ["NEXT JS", "TAILWIND CSS", "TYPESCRIPT", "GSAP"],
-    },
-    {
-      title: "OBYS",
-      link: "https://obys-eta.vercel.app/",
-      image: "/images/Obys.png",
-      alt: "OBYS",
-      skills: ["REACT", "TAILWIND CSS", "THREE JS", "GSAP", "FRAMER", "SHERY JS"],
     },
   ];
 

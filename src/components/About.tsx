@@ -54,23 +54,19 @@ const About = () => {
 
         <div className="text">
           <p>
-            I&apos;m Odunayo Ojowa. You might also know me as Ayo or Huncho
-            🐐. I&apos;m a logical, flexible and creative <b>frontend
-            engineer</b> with a passion for finding efficient solutions to
-            complex problems, and I spend a huge chunk of my time down
-            internet rabbit holes in search for inspiration or answers. 💯
-            <br /> <br /> Experience with code design, development, and
-            maintenance. At the heart, I am a problem solver who enjoys creating
-            meaningful experiences by focusing on what matters most. I like to
-            dive into the details and understand the big picture, while
-            simultaneously pushing boundaries to elevate everything I do.
-            Nothing lifts my spirits more than to experiment across digital
-            platforms, leading with my curiosity. <br /> <br /> I&apos;m
-            passionate about accessibility, storytelling and the power of
-            creating digital experiences that make emotional connections. The
-            ultimate thrill is fixing a bug that has kept me awake or totally
-            rocking a recipe I&apos;ve been dying to nail. Also did I mention I
-            love music?😂
+            I&apos;m Odunayo Ojowa, an <b>AI Product Engineer</b> building
+            intelligent software for real business workflows. I build AI agents,
+            business software and automation systems that help teams spend less
+            time on repetitive work.
+            <br /> <br /> My background is in frontend and product engineering,
+            building SaaS products, enterprise platforms and complex interfaces.
+            That work led me to software that can understand context, use tools
+            and take action. Beemcute&apos;s WhatsApp AI assistant turns
+            conversations into task actions, while an AI-powered CRM helps
+            business development teams manage opportunities and follow-ups.
+            <br /> <br /> I still care deeply about clear interfaces and good
+            product experiences. They&apos;re part of making intelligent systems
+            useful every day.
           </p>
 
           <button

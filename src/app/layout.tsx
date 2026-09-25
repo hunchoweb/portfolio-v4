@@ -17,22 +17,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Odunayo Ojowa | Frontend Engineer",
+    default: "Odunayo Ojowa — AI Product Engineer",
     template: "%s | Odunayo Ojowa",
   },
   description:
-    "Odunayo Ojowa, also known as Huncho, is a frontend engineer building polished web experiences with React, Next.js, TypeScript, GSAP, and Umbraco CMS.",
+    "AI Product Engineer building AI agents, business automation systems and intelligent SaaS products that help teams work more efficiently.",
   keywords: [
     "Odunayo Ojowa",
     "Ojowa",
     "Odunayo",
-    "frontend engineer",
-    "frontend developer",
-    "frontend engineer portfolio",
-    "React developer",
-    "Next.js developer",
-    "TypeScript developer",
-    "Lagos frontend engineer",
+    "AI Product Engineer",
+    "AI agents",
+    "business automation",
+    "agentic workflows",
+    "AI-powered SaaS",
+    "product engineering",
+    "Lagos AI Product Engineer",
     "Huncho",
   ],
   authors: [{ name: "Odunayo Ojowa" }],
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Odunayo Ojowa | Frontend Engineer",
+    title: "Odunayo Ojowa — AI Product Engineer",
     description:
-      "Frontend engineer portfolio by Odunayo Ojowa, showcasing React, Next.js, TypeScript, GSAP, and Umbraco CMS work.",
+      "AI Product Engineer building AI agents, business automation systems and intelligent SaaS products that help teams work more efficiently.",
     url: "/",
     siteName: "Odunayo Ojowa",
     images: [
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Odunayo Ojowa | Frontend Engineer",
+    title: "Odunayo Ojowa — AI Product Engineer",
     description:
-      "Frontend engineer portfolio by Odunayo Ojowa, also known as Huncho.",
+      "AI Product Engineer building AI agents, business automation systems and intelligent SaaS products that help teams work more efficiently.",
     images: ["/images/thumbnail.png"],
   },
 };
@@ -79,7 +79,7 @@ export default function RootLayout({
         "@id": `${siteUrl}#person`,
         name: "Odunayo Ojowa",
         alternateName: ["Odunayo", "Ojowa", "Huncho", "Ayo"],
-        jobTitle: "Frontend Engineer",
+        jobTitle: "AI Product Engineer",
         url: siteUrl,
         image: `${siteUrl}/images/thumbnail.png`,
         sameAs: [
@@ -88,12 +88,12 @@ export default function RootLayout({
           "https://www.linkedin.com/in/odunayo-ojowa-66763b192/",
         ],
         knowsAbout: [
+          "AI Product Engineering",
+          "AI Agents",
+          "Business Automation",
+          "Agentic Workflows",
+          "SaaS Products",
           "Frontend Engineering",
-          "React",
-          "Next.js",
-          "TypeScript",
-          "GSAP",
-          "Umbraco CMS",
         ],
       },
       {
@@ -103,7 +103,7 @@ export default function RootLayout({
         name: "Odunayo Ojowa",
         alternateName: "Odunayo Ojowa Portfolio",
         description:
-          "Frontend engineer portfolio by Odunayo Ojowa, also known as Huncho.",
+          "AI Product Engineer building AI agents, business automation systems and intelligent SaaS products that help teams work more efficiently.",
         publisher: {
           "@id": `${siteUrl}#person`,
         },

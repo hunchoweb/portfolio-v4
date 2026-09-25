@@ -8,10 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const skillsData = {
-  row1: "Javascript . ReactJS . Typescript . VueJS . NextJS .",
-  row2: "Thirdweb . Gsap . Sanity . Git . Metamask .",
-  row3: "HTML . CSS . SCSS . Bootstrap . TailwindCSS .",
-  row4: "MaterialUI . Firebase . Solidity . NodeJS . MongoDB . PostgreSQL .",
+  row1: "AI PRODUCT ENGINEERING . AI AGENTS . BUSINESS AUTOMATION .",
+  row2: "AGENTIC WORKFLOWS . WORKFLOW AUTOMATION . AI-POWERED SAAS .",
+  row3: "PRODUCT ENGINEERING . API INTEGRATION . SAAS ARCHITECTURE .",
+  row4: "TYPESCRIPT . NEXT.JS . REACT . NODE.JS . POSTGRESQL .",
 };
 
 const Skills = () => {
